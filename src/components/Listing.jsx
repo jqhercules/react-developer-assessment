@@ -15,6 +15,7 @@ const Listing = () => {
   const [postLimit, setPostLimit] = useState(4);
 
   useEffect(() => {
+    // Fetches all posts
     const fecthPosts = async () => {
       setLoaded(false);
 
@@ -29,6 +30,7 @@ const Listing = () => {
   }, []);
 
   useEffect(() => {
+    // Extract all categories into a list
     const filtedCategories = postLists.reduce(
       (acc, elem) => {
         for (const category of elem.categories) {
@@ -51,6 +53,7 @@ const Listing = () => {
     setCategories(filtedCategories);
   }, [postLists, selectedCategory]);
 
+  //
   const categoryFilter = {
     menuActive,
     setMenuActive,
